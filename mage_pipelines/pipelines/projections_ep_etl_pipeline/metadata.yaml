@@ -1,0 +1,119 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: data_loaders/load_io_projections_endpoint.py
+  downstream_blocks:
+  - transform_extract_player_projections_fact
+  - transform_extract_player_fantasy_fact
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_io_projections_endpoint
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_io_projections_endpoint
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: transformers/transform_extract_player_projections_fact.py
+  downstream_blocks:
+  - export_player_projections_fact
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: transform_extract_player_projections_fact
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_io_projections_endpoint
+  uuid: transform_extract_player_projections_fact
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: transformers/transform_extract_player_fantasy_fact.py
+  downstream_blocks:
+  - export_player_fantasy_fact
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: transform_extract_player_fantasy_fact
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_io_projections_endpoint
+  uuid: transform_extract_player_fantasy_fact
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: data_exporters/export_player_projections_fact.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: export_player_projections_fact
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - transform_extract_player_projections_fact
+  uuid: export_player_projections_fact
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: data_exporters/export_player_fantasy_fact.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: export_player_fantasy_fact
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - transform_extract_player_fantasy_fact
+  uuid: export_player_fantasy_fact
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-04-06 22:05:58.676566+00:00'
+data_integration: null
+description: Extract and Transform the SportsDataIO Projections and Fantasy Endpoint
+  and then Load to AWS S3
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: projections_ep_etl_pipeline
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: projections_ep_etl_pipeline
+variables_dir: /Users/reardonfamily/.mage_data/pgatour
+widgets: []
