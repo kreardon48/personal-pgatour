@@ -1,0 +1,718 @@
+[0m10:43:22.181590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059d5e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10598d410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105a00d10>]}
+
+
+============================== 10:43:22.183242 | 1d773a3a-007e-4e97-8f01-71179be45512 ==============================
+[0m10:43:22.183242 [info ] [MainThread]: Running with dbt=1.7.11
+[0m10:43:22.183526 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/anaconda3/envs/pgatour/dbt_pgatour/logs', 'profiles_dir': '/Users/reardonfamily/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m10:43:22.183745 [info ] [MainThread]: dbt version: 1.7.11
+[0m10:43:22.183890 [info ] [MainThread]: python version: 3.11.7
+[0m10:43:22.184025 [info ] [MainThread]: python path: /opt/anaconda3/envs/pgatour/bin/python
+[0m10:43:22.184149 [info ] [MainThread]: os info: macOS-14.1-arm64-arm-64bit
+[0m10:43:22.500790 [info ] [MainThread]: Using profiles dir at /Users/reardonfamily/.dbt
+[0m10:43:22.501087 [info ] [MainThread]: Using profiles.yml file at /Users/reardonfamily/.dbt/profiles.yml
+[0m10:43:22.501238 [info ] [MainThread]: Using dbt_project.yml file at /opt/anaconda3/envs/pgatour/dbt_pgatour/dbt_project.yml
+[0m10:43:22.501469 [info ] [MainThread]: adapter type: bigquery
+[0m10:43:22.501606 [info ] [MainThread]: adapter version: 1.7.7
+[0m10:43:22.525716 [info ] [MainThread]: Configuration:
+[0m10:43:22.525946 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:43:22.526084 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:43:22.526216 [info ] [MainThread]: Required dependencies:
+[0m10:43:22.526381 [debug] [MainThread]: Executing "git --help"
+[0m10:43:22.537290 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:43:22.537785 [debug] [MainThread]: STDERR: "b''"
+[0m10:43:22.537956 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:43:22.538115 [info ] [MainThread]: Connection:
+[0m10:43:22.538306 [info ] [MainThread]:   method: service-account
+[0m10:43:22.538426 [info ] [MainThread]:   database: personal-pgatour
+[0m10:43:22.538559 [info ] [MainThread]:   execution_project: personal-pgatour
+[0m10:43:22.538676 [info ] [MainThread]:   schema: tournament_schedule_fact
+[0m10:43:22.538787 [info ] [MainThread]:   location: US
+[0m10:43:22.538898 [info ] [MainThread]:   priority: interactive
+[0m10:43:22.539037 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m10:43:22.539159 [info ] [MainThread]:   impersonate_service_account: None
+[0m10:43:22.539275 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m10:43:22.539388 [info ] [MainThread]:   job_retries: 1
+[0m10:43:22.539503 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m10:43:22.539617 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m10:43:22.539742 [info ] [MainThread]:   timeout_seconds: 300
+[0m10:43:22.539862 [info ] [MainThread]:   client_id: None
+[0m10:43:22.539973 [info ] [MainThread]:   token_uri: None
+[0m10:43:22.540088 [info ] [MainThread]:   dataproc_region: None
+[0m10:43:22.540197 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m10:43:22.540309 [info ] [MainThread]:   gcs_bucket: None
+[0m10:43:22.540417 [info ] [MainThread]:   dataproc_batch: None
+[0m10:43:22.540623 [info ] [MainThread]: Registered adapter: bigquery=1.7.7
+[0m10:43:22.543986 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m10:43:22.544425 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:43:22.545714 [debug] [MainThread]: On debug: select 1 as id
+[0m10:43:23.091803 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:9c5397ee-ffa0-4bb4-abc6-674efe533042&page=queryresults
+[0m10:43:23.499863 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:43:23.500496 [info ] [MainThread]: [32mAll checks passed![0m
+[0m10:43:23.502875 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.3396178, "process_user_time": 2.216293, "process_kernel_time": 2.377896, "process_mem_max_rss": "200146944", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m10:43:23.503547 [debug] [MainThread]: Command `dbt debug` succeeded at 10:43:23.503421 after 1.34 seconds
+[0m10:43:23.503896 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m10:43:23.504344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x124630310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1014b9010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x132277f10>]}
+[0m10:43:23.504982 [debug] [MainThread]: Flushing usage events
+[0m19:45:09.874663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108ecb690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108ef4990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108ef5410>]}
+
+
+============================== 19:45:09.876949 | 89ef0357-745d-444f-8cf1-e73bdb336630 ==============================
+[0m19:45:09.876949 [info ] [MainThread]: Running with dbt=1.7.11
+[0m19:45:09.877235 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/anaconda3/envs/pgatour/dbt_pgatour/logs', 'version_check': 'True', 'profiles_dir': '/Users/reardonfamily/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m19:45:09.877484 [info ] [MainThread]: dbt version: 1.7.11
+[0m19:45:09.877637 [info ] [MainThread]: python version: 3.11.7
+[0m19:45:09.877774 [info ] [MainThread]: python path: /opt/anaconda3/envs/pgatour/bin/python
+[0m19:45:09.877898 [info ] [MainThread]: os info: macOS-14.1-arm64-arm-64bit
+[0m19:45:10.848228 [info ] [MainThread]: Using profiles dir at /Users/reardonfamily/.dbt
+[0m19:45:10.848518 [info ] [MainThread]: Using profiles.yml file at /Users/reardonfamily/.dbt/profiles.yml
+[0m19:45:10.848660 [info ] [MainThread]: Using dbt_project.yml file at /opt/anaconda3/envs/pgatour/dbt_pgatour/dbt_project.yml
+[0m19:45:10.848967 [info ] [MainThread]: adapter type: bigquery
+[0m19:45:10.849136 [info ] [MainThread]: adapter version: 1.7.7
+[0m19:45:10.872503 [info ] [MainThread]: Configuration:
+[0m19:45:10.872760 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m19:45:10.872893 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m19:45:10.873017 [info ] [MainThread]: Required dependencies:
+[0m19:45:10.873196 [debug] [MainThread]: Executing "git --help"
+[0m19:45:10.884420 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m19:45:10.885047 [debug] [MainThread]: STDERR: "b''"
+[0m19:45:10.885229 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m19:45:10.885376 [info ] [MainThread]: Connection:
+[0m19:45:10.885583 [info ] [MainThread]:   method: service-account
+[0m19:45:10.885708 [info ] [MainThread]:   database: personal-pgatour
+[0m19:45:10.885829 [info ] [MainThread]:   execution_project: personal-pgatour
+[0m19:45:10.885947 [info ] [MainThread]:   schema: tournament_leaderboard
+[0m19:45:10.886065 [info ] [MainThread]:   location: US
+[0m19:45:10.886181 [info ] [MainThread]:   priority: interactive
+[0m19:45:10.886295 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m19:45:10.886421 [info ] [MainThread]:   impersonate_service_account: None
+[0m19:45:10.886539 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m19:45:10.886656 [info ] [MainThread]:   job_retries: 1
+[0m19:45:10.886773 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m19:45:10.886896 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m19:45:10.887015 [info ] [MainThread]:   timeout_seconds: 300
+[0m19:45:10.887132 [info ] [MainThread]:   client_id: None
+[0m19:45:10.887261 [info ] [MainThread]:   token_uri: None
+[0m19:45:10.887396 [info ] [MainThread]:   dataproc_region: None
+[0m19:45:10.887520 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m19:45:10.887621 [info ] [MainThread]:   gcs_bucket: None
+[0m19:45:10.887740 [info ] [MainThread]:   dataproc_batch: None
+[0m19:45:10.887969 [info ] [MainThread]: Registered adapter: bigquery=1.7.7
+[0m19:45:10.891417 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m19:45:10.891988 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:45:10.893300 [debug] [MainThread]: On debug: select 1 as id
+[0m19:45:12.016516 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:a72350d0-1861-4c96-b13c-d018c9c5dc9f&page=queryresults
+[0m19:45:12.498886 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m19:45:12.499350 [info ] [MainThread]: [32mAll checks passed![0m
+[0m19:45:12.503075 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 2.6494741, "process_user_time": 4.577936, "process_kernel_time": 0.230754, "process_mem_max_rss": "198459392", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m19:45:12.503608 [debug] [MainThread]: Command `dbt debug` succeeded at 19:45:12.503498 after 2.65 seconds
+[0m19:45:12.503878 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m19:45:12.504135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10898c650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108eca210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105053b50>]}
+[0m19:45:12.504438 [debug] [MainThread]: Flushing usage events
+[0m13:46:56.818681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108633ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108688e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086ad190>]}
+
+
+============================== 13:46:56.820368 | 737bdcda-e9a5-40b3-b876-bd3b14cb804d ==============================
+[0m13:46:56.820368 [info ] [MainThread]: Running with dbt=1.7.11
+[0m13:46:56.820650 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/reardonfamily/Desktop/kylewreardon_dataportfolio/pgatour/dbt_pgatour/logs', 'debug': 'False', 'profiles_dir': '/Users/reardonfamily/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m13:46:56.820900 [info ] [MainThread]: dbt version: 1.7.11
+[0m13:46:56.821051 [info ] [MainThread]: python version: 3.11.7
+[0m13:46:56.821189 [info ] [MainThread]: python path: /opt/anaconda3/envs/pgatour/bin/python
+[0m13:46:56.821318 [info ] [MainThread]: os info: macOS-14.1-arm64-arm-64bit
+[0m13:46:57.144054 [info ] [MainThread]: Using profiles dir at /Users/reardonfamily/.dbt
+[0m13:46:57.144343 [info ] [MainThread]: Using profiles.yml file at /Users/reardonfamily/.dbt/profiles.yml
+[0m13:46:57.144509 [info ] [MainThread]: Using dbt_project.yml file at /Users/reardonfamily/Desktop/kylewreardon_dataportfolio/pgatour/dbt_pgatour/dbt_project.yml
+[0m13:46:57.144743 [info ] [MainThread]: adapter type: bigquery
+[0m13:46:57.144878 [info ] [MainThread]: adapter version: 1.7.7
+[0m13:46:57.170023 [info ] [MainThread]: Configuration:
+[0m13:46:57.170286 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:46:57.170442 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:46:57.170573 [info ] [MainThread]: Required dependencies:
+[0m13:46:57.170755 [debug] [MainThread]: Executing "git --help"
+[0m13:46:57.182012 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:46:57.182628 [debug] [MainThread]: STDERR: "b''"
+[0m13:46:57.182811 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:46:57.182983 [info ] [MainThread]: Connection:
+[0m13:46:57.183209 [info ] [MainThread]:   method: service-account
+[0m13:46:57.183336 [info ] [MainThread]:   database: personal-pgatour
+[0m13:46:57.183460 [info ] [MainThread]:   execution_project: personal-pgatour
+[0m13:46:57.183582 [info ] [MainThread]:   schema: tournament_leaderboard
+[0m13:46:57.183712 [info ] [MainThread]:   location: US
+[0m13:46:57.183837 [info ] [MainThread]:   priority: interactive
+[0m13:46:57.183957 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:46:57.184076 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:46:57.184189 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:46:57.184308 [info ] [MainThread]:   job_retries: 1
+[0m13:46:57.184428 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:46:57.184564 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m13:46:57.184688 [info ] [MainThread]:   timeout_seconds: 300
+[0m13:46:57.184811 [info ] [MainThread]:   client_id: None
+[0m13:46:57.184958 [info ] [MainThread]:   token_uri: None
+[0m13:46:57.185072 [info ] [MainThread]:   dataproc_region: None
+[0m13:46:57.185191 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:46:57.185319 [info ] [MainThread]:   gcs_bucket: None
+[0m13:46:57.185436 [info ] [MainThread]:   dataproc_batch: None
+[0m13:46:57.185666 [info ] [MainThread]: Registered adapter: bigquery=1.7.7
+[0m13:46:57.189382 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:46:57.189805 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:46:57.191044 [debug] [MainThread]: On debug: select 1 as id
+[0m13:46:58.172494 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:d01bfe48-9c25-4926-b1c1-c2cb5213633b&page=queryresults
+[0m13:46:58.559762 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:46:58.561003 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:46:58.565759 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.7657942, "process_user_time": 1.288125, "process_kernel_time": 3.382623, "process_mem_max_rss": "197345280", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m13:46:58.567201 [debug] [MainThread]: Command `dbt debug` succeeded at 13:46:58.566884 after 1.77 seconds
+[0m13:46:58.567733 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:46:58.568034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086ae950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081cf8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x146a4a510>]}
+[0m13:46:58.568330 [debug] [MainThread]: Flushing usage events
+[0m13:49:41.066215 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10493c290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049a5490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049a5f10>]}
+
+
+============================== 13:49:41.068156 | 324c1b16-e1ba-4d4c-8c98-bbf10b280f1d ==============================
+[0m13:49:41.068156 [info ] [MainThread]: Running with dbt=1.7.11
+[0m13:49:41.068442 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/reardonfamily/Desktop/kylewreardon_dataportfolio/pgatour/dbt_pgatour/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/reardonfamily/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:49:41.422405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '324c1b16-e1ba-4d4c-8c98-bbf10b280f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12c4b6d50>]}
+[0m13:49:41.477158 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '324c1b16-e1ba-4d4c-8c98-bbf10b280f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a95690>]}
+[0m13:49:41.477583 [info ] [MainThread]: Registered adapter: bigquery=1.7.7
+[0m13:49:41.487009 [debug] [MainThread]: checksum: 1b58ec263fbd34ee8091684d6a2f6c1ad2902b1459e632a74eb63768af36ddb7, vars: {}, profile: , target: , version: 1.7.11
+[0m13:49:41.487446 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:49:41.487661 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '324c1b16-e1ba-4d4c-8c98-bbf10b280f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12c585950>]}
+[0m13:49:41.868437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '324c1b16-e1ba-4d4c-8c98-bbf10b280f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12c67e150>]}
+[0m13:49:41.873056 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '324c1b16-e1ba-4d4c-8c98-bbf10b280f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d6ea690>]}
+[0m13:49:41.873251 [info ] [MainThread]: Found 3 models, 4 tests, 2 sources, 0 exposures, 0 metrics, 454 macros, 0 groups, 0 semantic models
+[0m13:49:41.873412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '324c1b16-e1ba-4d4c-8c98-bbf10b280f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d677cd0>]}
+[0m13:49:41.874220 [info ] [MainThread]: 
+[0m13:49:41.874532 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:49:41.875044 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_personal-pgatour'
+[0m13:49:41.875243 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:49:42.257757 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_personal-pgatour, now list_personal-pgatour_tournament_leaderboard)
+[0m13:49:42.258995 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:49:42.618946 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '324c1b16-e1ba-4d4c-8c98-bbf10b280f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d5be2d0>]}
+[0m13:49:42.620703 [info ] [MainThread]: Concurrency: 1 threads (target='test')
+[0m13:49:42.621323 [info ] [MainThread]: 
+[0m13:49:42.626777 [debug] [Thread-1 (]: Began running node model.dbt_pgatour.my_first_dbt_model
+[0m13:49:42.627448 [info ] [Thread-1 (]: 1 of 3 START sql table model tournament_leaderboard.my_first_dbt_model ......... [RUN]
+[0m13:49:42.628340 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_personal-pgatour_tournament_leaderboard, now model.dbt_pgatour.my_first_dbt_model)
+[0m13:49:42.628975 [debug] [Thread-1 (]: Began compiling node model.dbt_pgatour.my_first_dbt_model
+[0m13:49:42.638601 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_pgatour.my_first_dbt_model"
+[0m13:49:42.639693 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.my_first_dbt_model (compile): 13:49:42.629458 => 13:49:42.639480
+[0m13:49:42.640044 [debug] [Thread-1 (]: Began executing node model.dbt_pgatour.my_first_dbt_model
+[0m13:49:42.662858 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_pgatour.my_first_dbt_model"
+[0m13:49:42.663552 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:49:42.664488 [debug] [Thread-1 (]: On model.dbt_pgatour.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_pgatour", "target_name": "test", "node_id": "model.dbt_pgatour.my_first_dbt_model"} */
+
+  
+    
+
+    create or replace table `personal-pgatour`.`tournament_leaderboard`.`my_first_dbt_model`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    );
+  
+[0m13:49:43.447904 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:dfa90bc4-69ce-447d-8a82-51df049c6adb&page=queryresults
+[0m13:49:45.304098 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.my_first_dbt_model (execute): 13:49:42.640232 => 13:49:45.303872
+[0m13:49:45.304917 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '324c1b16-e1ba-4d4c-8c98-bbf10b280f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12c7f9f10>]}
+[0m13:49:45.305453 [info ] [Thread-1 (]: 1 of 3 OK created sql table model tournament_leaderboard.my_first_dbt_model .... [[32mCREATE TABLE (2.0 rows, 0 processed)[0m in 2.68s]
+[0m13:49:45.305934 [debug] [Thread-1 (]: Finished running node model.dbt_pgatour.my_first_dbt_model
+[0m13:49:45.306284 [debug] [Thread-1 (]: Began running node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m13:49:45.306762 [info ] [Thread-1 (]: 2 of 3 START sql view model tournament_leaderboard.tournament_leaderboard_round_position  [RUN]
+[0m13:49:45.307496 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_pgatour.my_first_dbt_model, now model.dbt_pgatour.tournament_leaderboard_round_position)
+[0m13:49:45.307811 [debug] [Thread-1 (]: Began compiling node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m13:49:45.310813 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_pgatour.tournament_leaderboard_round_position"
+[0m13:49:45.311531 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.tournament_leaderboard_round_position (compile): 13:49:45.308019 => 13:49:45.311361
+[0m13:49:45.311805 [debug] [Thread-1 (]: Began executing node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m13:49:45.324501 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_pgatour.tournament_leaderboard_round_position"
+[0m13:49:45.325065 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:49:45.326088 [debug] [Thread-1 (]: On model.dbt_pgatour.tournament_leaderboard_round_position: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_pgatour", "target_name": "test", "node_id": "model.dbt_pgatour.tournament_leaderboard_round_position"} */
+
+
+  create or replace view `personal-pgatour`.`tournament_leaderboard`.`tournament_leaderboard_round_position`
+  OPTIONS()
+  as 
+
+WITH cte_leaderboard_round AS
+  (
+   SELECT
+        DISTINCT PlayerRoundID
+       ,RoundNumber
+       ,BackNineStart
+       ,PlayerID
+       ,TournamentID
+       ,PlayerTournamentID
+   FROM `personal-pgatour`.`tournament_leaderboard`.`leaderboard_round_stats`
+  )
+,
+cte_leaderboard_hole AS
+(
+ SELECT
+     DISTINCT PlayerRoundID
+    ,HoleNumber
+    ,Par
+    ,ToPar
+    ,Strokes
+    ,ToParOnRound
+    ,StrokesOnRound
+ FROM `personal-pgatour`.`tournament_leaderboard`.`leaderboard_hole_stats`
+)
+
+SELECT
+     rnd.PlayerRoundID
+    ,rnd.RoundNumber
+    ,hole.HoleNumber
+    ,hole.Par
+    ,hole.ToPar
+    ,hole.Strokes
+    ,hole.ToParOnRound
+    ,hole.StrokesOnRound
+    ,rnd.BackNineStart
+    ,rnd.PlayerID
+    ,rnd.TournamentID
+    ,rnd.PlayerTournamentID
+    ,RANK() OVER (
+        PARTITION BY rnd.TournamentID, rnd.RoundNumber, hole.HoleNumber
+        ORDER BY hole.ToParOnRound ASC
+        ) AS LeaderboardPositionOnRound_ToPar
+    ,RANK() OVER (
+        PARTITION BY rnd.TournamentID, rnd.RoundNumber, hole.HoleNumber
+        ORDER BY hole.StrokesOnRound ASC
+        ) AS LeaderboardPositionOnRound_Strokes
+FROM cte_leaderboard_round  rnd
+JOIN cte_leaderboard_hole   hole
+ON  rnd.PlayerRoundID = hole.PlayerRoundID
+
+ORDER BY
+     rnd.TournamentID
+    ,rnd.PlayerTournamentID
+    ,rnd.RoundNumber
+    ,hole.HoleNumber
+;;
+
+
+[0m13:49:45.905584 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:7cc60b15-7173-4658-8c23-36e79975b14b&page=queryresults
+[0m13:49:45.907315 [debug] [Thread-1 (]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest('Syntax error: Unexpected ";" at [63:2]; reason: invalidQuery, location: query, message: Syntax error: Unexpected ";" at [63:2]')
+[0m13:49:46.619707 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:6e867047-8f8b-43ee-9ee3-bfb0523d73f5&page=queryresults
+[0m13:49:46.620758 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:6e867047-8f8b-43ee-9ee3-bfb0523d73f5&page=queryresults
+[0m13:49:46.621783 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.tournament_leaderboard_round_position (execute): 13:49:45.311945 => 13:49:46.621424
+[0m13:49:46.635288 [debug] [Thread-1 (]: Database Error in model tournament_leaderboard_round_position (models/tournament_leaderboard_round_position.sql)
+  Syntax error: Unexpected ";" at [63:2]
+  compiled Code at target/run/dbt_pgatour/models/tournament_leaderboard_round_position.sql
+[0m13:49:46.635893 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '324c1b16-e1ba-4d4c-8c98-bbf10b280f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d727e90>]}
+[0m13:49:46.636444 [error] [Thread-1 (]: 2 of 3 ERROR creating sql view model tournament_leaderboard.tournament_leaderboard_round_position  [[31mERROR[0m in 1.33s]
+[0m13:49:46.636930 [debug] [Thread-1 (]: Finished running node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m13:49:46.637280 [debug] [Thread-1 (]: Began running node model.dbt_pgatour.my_second_dbt_model
+[0m13:49:46.638288 [info ] [Thread-1 (]: 3 of 3 START sql view model tournament_leaderboard.my_second_dbt_model ......... [RUN]
+[0m13:49:46.638872 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_pgatour.tournament_leaderboard_round_position, now model.dbt_pgatour.my_second_dbt_model)
+[0m13:49:46.639156 [debug] [Thread-1 (]: Began compiling node model.dbt_pgatour.my_second_dbt_model
+[0m13:49:46.641558 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_pgatour.my_second_dbt_model"
+[0m13:49:46.642155 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.my_second_dbt_model (compile): 13:49:46.639321 => 13:49:46.642018
+[0m13:49:46.642393 [debug] [Thread-1 (]: Began executing node model.dbt_pgatour.my_second_dbt_model
+[0m13:49:46.644380 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_pgatour.my_second_dbt_model"
+[0m13:49:46.644837 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:49:46.645879 [debug] [Thread-1 (]: On model.dbt_pgatour.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_pgatour", "target_name": "test", "node_id": "model.dbt_pgatour.my_second_dbt_model"} */
+
+
+  create or replace view `personal-pgatour`.`tournament_leaderboard`.`my_second_dbt_model`
+  OPTIONS()
+  as -- Use the `ref` function to select from other models
+
+select *
+from `personal-pgatour`.`tournament_leaderboard`.`my_first_dbt_model`
+where id = 1;
+
+
+[0m13:49:47.338867 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:1b571097-3edc-4b4d-b67a-74d42fbefb74&page=queryresults
+[0m13:49:47.901727 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.my_second_dbt_model (execute): 13:49:46.642531 => 13:49:47.901409
+[0m13:49:47.902965 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '324c1b16-e1ba-4d4c-8c98-bbf10b280f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12d727410>]}
+[0m13:49:47.903767 [info ] [Thread-1 (]: 3 of 3 OK created sql view model tournament_leaderboard.my_second_dbt_model .... [[32mCREATE VIEW (0 processed)[0m in 1.26s]
+[0m13:49:47.904470 [debug] [Thread-1 (]: Finished running node model.dbt_pgatour.my_second_dbt_model
+[0m13:49:47.906751 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:49:47.907260 [debug] [MainThread]: Connection 'model.dbt_pgatour.my_second_dbt_model' was properly closed.
+[0m13:49:47.907661 [info ] [MainThread]: 
+[0m13:49:47.908009 [info ] [MainThread]: Finished running 1 table model, 2 view models in 0 hours 0 minutes and 6.03 seconds (6.03s).
+[0m13:49:47.908813 [debug] [MainThread]: Command end result
+[0m13:49:47.915953 [info ] [MainThread]: 
+[0m13:49:47.916273 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m13:49:47.916506 [info ] [MainThread]: 
+[0m13:49:47.916733 [error] [MainThread]:   Database Error in model tournament_leaderboard_round_position (models/tournament_leaderboard_round_position.sql)
+  Syntax error: Unexpected ";" at [63:2]
+  compiled Code at target/run/dbt_pgatour/models/tournament_leaderboard_round_position.sql
+[0m13:49:47.916971 [info ] [MainThread]: 
+[0m13:49:47.917215 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=1 SKIP=0 TOTAL=3
+[0m13:49:47.918743 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 6.872266, "process_user_time": 2.872957, "process_kernel_time": 2.657765, "process_mem_max_rss": "221511680", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m13:49:47.919109 [debug] [MainThread]: Command `dbt run` failed at 13:49:47.919029 after 6.87 seconds
+[0m13:49:47.919362 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049a5910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100a77c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103e1cdd0>]}
+[0m13:49:47.919601 [debug] [MainThread]: Flushing usage events
+[0m13:51:46.393870 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a95f5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10af16710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1019d0>]}
+
+
+============================== 13:51:46.395565 | e5dc9e3c-b179-4b47-a65e-a380184cdaac ==============================
+[0m13:51:46.395565 [info ] [MainThread]: Running with dbt=1.7.11
+[0m13:51:46.395831 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/reardonfamily/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/reardonfamily/Desktop/kylewreardon_dataportfolio/pgatour/dbt_pgatour/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:51:46.746335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e5dc9e3c-b179-4b47-a65e-a380184cdaac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15e040910>]}
+[0m13:51:46.801182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e5dc9e3c-b179-4b47-a65e-a380184cdaac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15e272850>]}
+[0m13:51:46.801612 [info ] [MainThread]: Registered adapter: bigquery=1.7.7
+[0m13:51:46.810679 [debug] [MainThread]: checksum: 1b58ec263fbd34ee8091684d6a2f6c1ad2902b1459e632a74eb63768af36ddb7, vars: {}, profile: , target: , version: 1.7.11
+[0m13:51:46.822777 [debug] [MainThread]: Partial parsing enabled: 3 files deleted, 0 files added, 1 files changed.
+[0m13:51:46.823048 [debug] [MainThread]: Partial parsing: deleted file: dbt_pgatour://models/example/my_second_dbt_model.sql
+[0m13:51:46.823176 [debug] [MainThread]: Partial parsing: deleted file: dbt_pgatour://models/example/my_first_dbt_model.sql
+[0m13:51:46.823358 [debug] [MainThread]: Partial parsing: updated file: dbt_pgatour://models/tournament_leaderboard_round_position.sql
+[0m13:51:46.867503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e5dc9e3c-b179-4b47-a65e-a380184cdaac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15f9b0bd0>]}
+[0m13:51:46.871701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e5dc9e3c-b179-4b47-a65e-a380184cdaac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15fdda690>]}
+[0m13:51:46.871872 [info ] [MainThread]: Found 1 model, 2 sources, 0 exposures, 0 metrics, 454 macros, 0 groups, 0 semantic models
+[0m13:51:46.872034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e5dc9e3c-b179-4b47-a65e-a380184cdaac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15fd3f7d0>]}
+[0m13:51:46.872686 [info ] [MainThread]: 
+[0m13:51:46.872992 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:51:46.873485 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_personal-pgatour'
+[0m13:51:46.873674 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:51:47.239929 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_personal-pgatour, now list_personal-pgatour_tournament_leaderboard)
+[0m13:51:47.240917 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:51:47.595618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e5dc9e3c-b179-4b47-a65e-a380184cdaac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15f984390>]}
+[0m13:51:47.596656 [info ] [MainThread]: Concurrency: 1 threads (target='test')
+[0m13:51:47.597007 [info ] [MainThread]: 
+[0m13:51:47.603184 [debug] [Thread-1 (]: Began running node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m13:51:47.603976 [info ] [Thread-1 (]: 1 of 1 START sql view model tournament_leaderboard.tournament_leaderboard_round_position  [RUN]
+[0m13:51:47.604800 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_personal-pgatour_tournament_leaderboard, now model.dbt_pgatour.tournament_leaderboard_round_position)
+[0m13:51:47.605182 [debug] [Thread-1 (]: Began compiling node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m13:51:47.612355 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_pgatour.tournament_leaderboard_round_position"
+[0m13:51:47.613119 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.tournament_leaderboard_round_position (compile): 13:51:47.605399 => 13:51:47.612931
+[0m13:51:47.613423 [debug] [Thread-1 (]: Began executing node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m13:51:47.634683 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_pgatour.tournament_leaderboard_round_position"
+[0m13:51:47.635266 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:51:47.636335 [debug] [Thread-1 (]: On model.dbt_pgatour.tournament_leaderboard_round_position: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_pgatour", "target_name": "test", "node_id": "model.dbt_pgatour.tournament_leaderboard_round_position"} */
+
+
+  create or replace view `personal-pgatour`.`tournament_leaderboard`.`tournament_leaderboard_round_position`
+  OPTIONS()
+  as 
+
+WITH cte_leaderboard_round AS
+  (
+   SELECT
+        DISTINCT PlayerRoundID
+       ,RoundNumber
+       ,BackNineStart
+       ,PlayerID
+       ,TournamentID
+       ,PlayerTournamentID
+   FROM `personal-pgatour`.`tournament_leaderboard`.`leaderboard_round_stats`
+  )
+,
+cte_leaderboard_hole AS
+(
+ SELECT
+     DISTINCT PlayerRoundID
+    ,HoleNumber
+    ,Par
+    ,ToPar
+    ,Strokes
+    ,ToParOnRound
+    ,StrokesOnRound
+ FROM `personal-pgatour`.`tournament_leaderboard`.`leaderboard_hole_stats`
+)
+
+SELECT
+     rnd.PlayerRoundID
+    ,rnd.RoundNumber
+    ,hole.HoleNumber
+    ,hole.Par
+    ,hole.ToPar
+    ,hole.Strokes
+    ,hole.ToParOnRound
+    ,hole.StrokesOnRound
+    ,rnd.BackNineStart
+    ,rnd.PlayerID
+    ,rnd.TournamentID
+    ,rnd.PlayerTournamentID
+    ,RANK() OVER (
+        PARTITION BY rnd.TournamentID, rnd.RoundNumber, hole.HoleNumber
+        ORDER BY hole.ToParOnRound ASC
+        ) AS LeaderboardPositionOnRound_ToPar
+    ,RANK() OVER (
+        PARTITION BY rnd.TournamentID, rnd.RoundNumber, hole.HoleNumber
+        ORDER BY hole.StrokesOnRound ASC
+        ) AS LeaderboardPositionOnRound_Strokes
+FROM cte_leaderboard_round  rnd
+JOIN cte_leaderboard_hole   hole
+ON  rnd.PlayerRoundID = hole.PlayerRoundID
+
+ORDER BY
+     rnd.TournamentID
+    ,rnd.PlayerTournamentID
+    ,rnd.RoundNumber
+    ,hole.HoleNumber;
+
+
+[0m13:51:48.497641 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:c43ef05c-8eef-47cf-ae78-09f306c40fdd&page=queryresults
+[0m13:51:48.904480 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.tournament_leaderboard_round_position (execute): 13:51:47.613596 => 13:51:48.904249
+[0m13:51:48.905313 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e5dc9e3c-b179-4b47-a65e-a380184cdaac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x15fc05b10>]}
+[0m13:51:48.905870 [info ] [Thread-1 (]: 1 of 1 OK created sql view model tournament_leaderboard.tournament_leaderboard_round_position  [[32mCREATE VIEW (0 processed)[0m in 1.30s]
+[0m13:51:48.906357 [debug] [Thread-1 (]: Finished running node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m13:51:48.908494 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:51:48.909042 [debug] [MainThread]: Connection 'model.dbt_pgatour.tournament_leaderboard_round_position' was properly closed.
+[0m13:51:48.909351 [info ] [MainThread]: 
+[0m13:51:48.909679 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.04 seconds (2.04s).
+[0m13:51:48.910281 [debug] [MainThread]: Command end result
+[0m13:51:48.916640 [info ] [MainThread]: 
+[0m13:51:48.916933 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:51:48.917136 [info ] [MainThread]: 
+[0m13:51:48.917366 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m13:51:48.918840 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.543907, "process_user_time": 2.563219, "process_kernel_time": 2.429397, "process_mem_max_rss": "212189184", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m13:51:48.919211 [debug] [MainThread]: Command `dbt run` succeeded at 13:51:48.919134 after 2.54 seconds
+[0m13:51:48.919453 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aef6650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10af18650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10536cfd0>]}
+[0m13:51:48.919710 [debug] [MainThread]: Flushing usage events
+[0m14:00:16.829122 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ea6850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f05510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f05f90>]}
+
+
+============================== 14:00:16.830783 | 789b99f8-c265-40ea-8d01-0faa12b0e639 ==============================
+[0m14:00:16.830783 [info ] [MainThread]: Running with dbt=1.7.11
+[0m14:00:16.831055 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/reardonfamily/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/reardonfamily/Desktop/kylewreardon_dataportfolio/pgatour/dbt_pgatour/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:00:17.181755 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '789b99f8-c265-40ea-8d01-0faa12b0e639', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13f7c1290>]}
+[0m14:00:17.234658 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '789b99f8-c265-40ea-8d01-0faa12b0e639', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13f324e10>]}
+[0m14:00:17.235093 [info ] [MainThread]: Registered adapter: bigquery=1.7.7
+[0m14:00:17.243226 [debug] [MainThread]: checksum: 1b58ec263fbd34ee8091684d6a2f6c1ad2902b1459e632a74eb63768af36ddb7, vars: {}, profile: , target: , version: 1.7.11
+[0m14:00:17.246820 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m14:00:17.247065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '789b99f8-c265-40ea-8d01-0faa12b0e639', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13fb17310>]}
+[0m14:00:17.574673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '789b99f8-c265-40ea-8d01-0faa12b0e639', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13fe1efd0>]}
+[0m14:00:17.579200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '789b99f8-c265-40ea-8d01-0faa12b0e639', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13fe51d10>]}
+[0m14:00:17.579393 [info ] [MainThread]: Found 2 models, 2 sources, 0 exposures, 0 metrics, 454 macros, 0 groups, 0 semantic models
+[0m14:00:17.579558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '789b99f8-c265-40ea-8d01-0faa12b0e639', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13f8473d0>]}
+[0m14:00:17.580337 [info ] [MainThread]: 
+[0m14:00:17.580659 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:00:17.581178 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_personal-pgatour'
+[0m14:00:17.581394 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:00:18.152555 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_personal-pgatour, now list_personal-pgatour_tournament_leaderboard)
+[0m14:00:18.153232 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:00:18.641789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '789b99f8-c265-40ea-8d01-0faa12b0e639', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13f93b110>]}
+[0m14:00:18.643316 [info ] [MainThread]: Concurrency: 1 threads (target='test')
+[0m14:00:18.644008 [info ] [MainThread]: 
+[0m14:00:18.647604 [debug] [Thread-1 (]: Began running node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m14:00:18.648350 [info ] [Thread-1 (]: 1 of 2 START sql view model tournament_leaderboard.tournament_leaderboard_round_position  [RUN]
+[0m14:00:18.649402 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_personal-pgatour_tournament_leaderboard, now model.dbt_pgatour.tournament_leaderboard_round_position)
+[0m14:00:18.649914 [debug] [Thread-1 (]: Began compiling node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m14:00:18.660288 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_pgatour.tournament_leaderboard_round_position"
+[0m14:00:18.661315 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.tournament_leaderboard_round_position (compile): 14:00:18.650235 => 14:00:18.661107
+[0m14:00:18.661650 [debug] [Thread-1 (]: Began executing node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m14:00:18.679766 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_pgatour.tournament_leaderboard_round_position"
+[0m14:00:18.680368 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:18.681436 [debug] [Thread-1 (]: On model.dbt_pgatour.tournament_leaderboard_round_position: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_pgatour", "target_name": "test", "node_id": "model.dbt_pgatour.tournament_leaderboard_round_position"} */
+
+
+  create or replace view `personal-pgatour`.`tournament_leaderboard`.`tournament_leaderboard_round_position`
+  OPTIONS()
+  as 
+
+WITH cte_leaderboard_round AS
+  (
+   SELECT
+        DISTINCT PlayerRoundID
+       ,RoundNumber
+       ,BackNineStart
+       ,PlayerID
+       ,TournamentID
+       ,PlayerTournamentID
+   FROM `personal-pgatour`.`tournament_leaderboard`.`leaderboard_round_stats`
+  )
+,
+cte_leaderboard_hole AS
+(
+ SELECT
+     DISTINCT PlayerRoundID
+    ,HoleNumber
+    ,Par
+    ,ToPar
+    ,Strokes
+    ,ToParOnRound
+    ,StrokesOnRound
+ FROM `personal-pgatour`.`tournament_leaderboard`.`leaderboard_hole_stats`
+)
+
+SELECT
+     rnd.PlayerRoundID
+    ,rnd.RoundNumber
+    ,hole.HoleNumber
+    ,hole.Par
+    ,hole.ToPar
+    ,hole.Strokes
+    ,hole.ToParOnRound
+    ,hole.StrokesOnRound
+    ,rnd.BackNineStart
+    ,rnd.PlayerID
+    ,rnd.TournamentID
+    ,rnd.PlayerTournamentID
+    ,RANK() OVER (
+        PARTITION BY rnd.TournamentID, rnd.RoundNumber, hole.HoleNumber
+        ORDER BY hole.ToParOnRound ASC
+        ) AS LeaderboardPositionOnRound_ToPar
+    ,RANK() OVER (
+        PARTITION BY rnd.TournamentID, rnd.RoundNumber, hole.HoleNumber
+        ORDER BY hole.StrokesOnRound ASC
+        ) AS LeaderboardPositionOnRound_Strokes
+FROM cte_leaderboard_round  rnd
+JOIN cte_leaderboard_hole   hole
+ON  rnd.PlayerRoundID = hole.PlayerRoundID
+
+ORDER BY
+     rnd.TournamentID
+    ,rnd.PlayerTournamentID
+    ,rnd.RoundNumber
+    ,hole.HoleNumber;
+
+
+[0m14:00:19.370955 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:b8bb0046-99a8-4fe1-83b2-360e38fcea7c&page=queryresults
+[0m14:00:19.736285 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.tournament_leaderboard_round_position (execute): 14:00:18.661833 => 14:00:19.736130
+[0m14:00:19.736881 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '789b99f8-c265-40ea-8d01-0faa12b0e639', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13f974d10>]}
+[0m14:00:19.737294 [info ] [Thread-1 (]: 1 of 2 OK created sql view model tournament_leaderboard.tournament_leaderboard_round_position  [[32mCREATE VIEW (0 processed)[0m in 1.09s]
+[0m14:00:19.737657 [debug] [Thread-1 (]: Finished running node model.dbt_pgatour.tournament_leaderboard_round_position
+[0m14:00:19.737935 [debug] [Thread-1 (]: Began running node model.dbt_pgatour.tournament_leaderboard_tournament_position
+[0m14:00:19.738206 [info ] [Thread-1 (]: 2 of 2 START sql view model tournament_leaderboard.tournament_leaderboard_tournament_position  [RUN]
+[0m14:00:19.738704 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_pgatour.tournament_leaderboard_round_position, now model.dbt_pgatour.tournament_leaderboard_tournament_position)
+[0m14:00:19.739007 [debug] [Thread-1 (]: Began compiling node model.dbt_pgatour.tournament_leaderboard_tournament_position
+[0m14:00:19.743060 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_pgatour.tournament_leaderboard_tournament_position"
+[0m14:00:19.743618 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.tournament_leaderboard_tournament_position (compile): 14:00:19.739157 => 14:00:19.743488
+[0m14:00:19.743826 [debug] [Thread-1 (]: Began executing node model.dbt_pgatour.tournament_leaderboard_tournament_position
+[0m14:00:19.746185 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_pgatour.tournament_leaderboard_tournament_position"
+[0m14:00:19.746769 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:19.748103 [debug] [Thread-1 (]: On model.dbt_pgatour.tournament_leaderboard_tournament_position: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_pgatour", "target_name": "test", "node_id": "model.dbt_pgatour.tournament_leaderboard_tournament_position"} */
+
+
+  create or replace view `personal-pgatour`.`tournament_leaderboard`.`tournament_leaderboard_tournament_position`
+  OPTIONS()
+  as 
+
+WITH cte_leaderboard_round AS
+  (
+   SELECT
+        DISTINCT PlayerRoundID
+       ,RoundNumber
+       ,BackNineStart
+       ,PlayerID
+       ,TournamentID
+       ,PlayerTournamentID
+   FROM `personal-pgatour`.`tournament_leaderboard`.`leaderboard_round_stats`
+  )
+,
+cte_leaderboard_hole AS
+  (
+   SELECT
+       DISTINCT PlayerRoundID
+      ,HoleNumber
+      ,Par
+      ,ToPar
+      ,Strokes
+      ,ToParOnRound
+      ,StrokesOnRound
+   FROM `personal-pgatour`.`tournament_leaderboard`.`leaderboard_hole_stats`
+  )
+,
+cte_leaderboard_tournament AS
+  (
+   SELECT
+        rnd.PlayerRoundID
+       ,rnd.RoundNumber
+       ,hole.HoleNumber
+       ,hole.Par
+       ,hole.ToPar
+       ,hole.Strokes
+       ,hole.ToParOnRound
+       ,hole.StrokesOnRound
+       ,rnd.BackNineStart
+       ,rnd.PlayerID
+       ,rnd.TournamentID
+       ,rnd.PlayerTournamentID
+       ,SUM(ToPar) OVER (
+           PARTITION BY rnd.PlayerTournamentID
+           ORDER BY rnd.RoundNumber, hole.HoleNumber
+           ) AS ToParOnTournament
+       ,SUM(Strokes) OVER (
+           PARTITION BY rnd.PlayerTournamentID
+           ORDER BY  rnd.RoundNumber, hole.HoleNumber ASC
+           ) AS StrokesOnTournament
+   FROM cte_leaderboard_round  rnd
+   JOIN cte_leaderboard_hole   hole
+   ON  rnd.PlayerRoundID = hole.PlayerRoundID
+  )
+
+SELECT
+     trny.PlayerRoundID
+    ,trny.RoundNumber
+    ,trny.HoleNumber
+    ,trny.Par
+    ,trny.ToPar
+    ,trny.Strokes
+    ,trny.ToParOnRound
+    ,trny.StrokesOnRound
+    ,trny.ToParOnTournament
+    ,trny.StrokesOnTournament
+    ,trny.BackNineStart
+    ,trny.PlayerID
+    ,trny.TournamentID
+    ,trny.PlayerTournamentID
+    ,RANK() OVER (
+        PARTITION BY trny.TournamentID, trny.RoundNumber, trny.HoleNumber
+        ORDER BY trny.ToParOnTournament ASC
+        ) AS LeaderboardPositionOnTournament_ToPar
+    ,RANK() OVER (
+        PARTITION BY trny.TournamentID, trny.RoundNumber, trny.HoleNumber
+        ORDER BY trny.StrokesOnTournament ASC
+        ) AS LeaderboardPositionOnTournament_Strokes
+FROM cte_leaderboard_tournament  trny
+
+ORDER BY
+     trny.TournamentID
+    ,trny.PlayerTournamentID
+    ,trny.RoundNumber
+    ,trny.HoleNumber;
+
+
+[0m14:00:20.423644 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=personal-pgatour&j=bq:US:d500d8b7-181b-477e-8ec0-4d0b6b54ae02&page=queryresults
+[0m14:00:21.056387 [debug] [Thread-1 (]: Timing info for model.dbt_pgatour.tournament_leaderboard_tournament_position (execute): 14:00:19.743948 => 14:00:21.056013
+[0m14:00:21.057663 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '789b99f8-c265-40ea-8d01-0faa12b0e639', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13fb6aed0>]}
+[0m14:00:21.058597 [info ] [Thread-1 (]: 2 of 2 OK created sql view model tournament_leaderboard.tournament_leaderboard_tournament_position  [[32mCREATE VIEW (0 processed)[0m in 1.32s]
+[0m14:00:21.059445 [debug] [Thread-1 (]: Finished running node model.dbt_pgatour.tournament_leaderboard_tournament_position
+[0m14:00:21.061697 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:00:21.062069 [debug] [MainThread]: Connection 'model.dbt_pgatour.tournament_leaderboard_tournament_position' was properly closed.
+[0m14:00:21.062476 [info ] [MainThread]: 
+[0m14:00:21.062894 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 3.48 seconds (3.48s).
+[0m14:00:21.063729 [debug] [MainThread]: Command end result
+[0m14:00:21.075204 [info ] [MainThread]: 
+[0m14:00:21.075723 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:00:21.075991 [info ] [MainThread]: 
+[0m14:00:21.076271 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m14:00:21.077893 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.267634, "process_user_time": 1.92977, "process_kernel_time": 3.414969, "process_mem_max_rss": "214155264", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m14:00:21.078333 [debug] [MainThread]: Command `dbt run` succeeded at 14:00:21.078251 after 4.27 seconds
+[0m14:00:21.078601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106eecd50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102fd7c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a33750>]}
+[0m14:00:21.078868 [debug] [MainThread]: Flushing usage events

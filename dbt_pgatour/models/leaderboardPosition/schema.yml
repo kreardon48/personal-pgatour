@@ -1,0 +1,10 @@
+
+version: 2
+
+sources:
+  - name: leaderboard
+    database: personal-pgatour
+    schema: tournament_leaderboard
+    tables:
+      - name: leaderboard_hole_stats
+      - name: leaderboard_round_stats

@@ -1,0 +1,7 @@
+YouTube Video: https://www.youtube.com/watch?v=toSAAgLUHuk
+
+dbt (data build tool) Crash Course for Beginners (dbt core)
+
+cd /opt/anaconda3/envs/pgatour/dbt_pgatour
+dbt debug
+
