@@ -53,11 +53,21 @@ Pipeline code, and Pipeline development environment details can be found in ./ma
 ### leaderboard_analytics_pipeline
 <img src="./orchestration/leaderboard_analytics_pipeline.png">
 
+## Project Updates - August2024
+Analytics has taken over the sports world, so much so we have sports fans arguing about whether momentum is real or not. Like any sports fanatic who too loves data, I have become enthralled with the availabile statistics for proffesional golf. Given this enthusiasim, I thought it would be cool to try and build out a Live Tournament Stat Tracker, and Live Leaderboard that would replicate what viewers see when tuning into live broadcast of proffesional golf.
+
+In order to begin this part of the project, I first had to create data that could be used to simulate a live tournament stream. The process of creating this simulated stream can be found in ./streamData/streamData_prep.py.
+
+Essentially what we have done is taken the USGA Pace of Play governance rules which outlines the expected time a group should finish a hole based on the number of players per group. Then using their tee-time, we can create time-stamped for each players score by hole.
+
+I have been expirementing with various ways to incorporate streaming data with stored historical data. For our purpose we have raw historical data stored in S3, but are using Google BigQuery to analyze our data, and build down stream statistical tables with our dbt_pgatour models.
+
+For that reason, in ./streamData/kafkaProducer.py, I have a kafkaProducer, along with an approach to send data to a AWS Kinesis Data Stream, as well as sending records to Google BigQuery via GCP's Python module. In ./streamData/kafkaConsumer.py, I have provided the process to ingest data from a Kafka stream, and archived code to send those records to AWS S3, that could then later be used with AWS Glue. However, for the time being, I have continued with sending the streaming records to GBQ, and will then build additional dbt models to provide the neessary statistics.
+
 ## Next Steps
 
 Now that the first phase of the project is complete, Phase2 Goals will consist of:  
-1. Implement data models using dbt, data build tool, into the Analytics Pipeline. I have already begun building out various dbt models, see the .sql files in ./models.  
-2. Implement CDC (Change Data Capture) to orchestrate the process of keeping the AWS S3 Bucket current with the results of future PGA Tournaments in the /schedule_data/tournament_fact file in the AWS S3 Bucket.  
+1. Implement CDC (Change Data Capture) to orchestrate the process of keeping the AWS S3 Bucket current with the results of future PGA Tournaments in the /schedule_data/tournament_fact file in the AWS S3 Bucket.  
 
 ## Acknowlegements
 
@@ -65,3 +75,4 @@ During this project there were a few modern Data/Big Tech Content creators whose
 - Darshil Parmar's YouTube Page: https://www.youtube.com/@DarshilParmar  
 - Darshil Parmar's LinkedIn Page: https://www.linkedin.com/in/darshil-parmar/  
 - Zach Wilson's LinkedIn Page: https://www.linkedin.com/in/eczachly/  
+
